@@ -32,13 +32,13 @@ export const Footer = () => {
           <div className="col-span-2 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
               <motion.div
-                className="p-2 rounded-xl bg-gradient-to-br from-primary to-accent"
+                className="w-10 h-10 rounded-xl overflow-hidden"
                 whileHover={{ scale: 1.05, rotate: 5 }}
               >
-                <GraduationCap className="w-5 h-5 text-primary-foreground" />
+                <img src="/logo.png" alt="Tailwind Tales Logo" className="w-full h-full object-cover" />
               </motion.div>
               <span className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-                TailwindMaster
+                Tailwind Tales
               </span>
             </Link>
             <p className="text-sm text-muted-foreground mb-4">

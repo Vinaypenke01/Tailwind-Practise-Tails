@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import { 
-  BookOpen, 
-  Menu, 
-  X, 
+import {
+  BookOpen,
+  Menu,
+  X,
   Sparkles,
   GraduationCap,
   Zap
@@ -26,14 +26,14 @@ export const Header = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
           <motion.div
-            className="p-2 rounded-xl bg-gradient-to-br from-primary to-accent"
+            className="w-10 h-10 rounded-xl overflow-hidden"
             whileHover={{ scale: 1.05, rotate: 5 }}
             whileTap={{ scale: 0.95 }}
           >
-            <GraduationCap className="w-5 h-5 text-primary-foreground" />
+            <img src="/logo.png" alt="Tailwind Tales Logo" className="w-full h-full object-cover" />
           </motion.div>
           <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-            TailwindMaster
+            Tailwind Tales
           </span>
         </Link>
 
@@ -42,16 +42,15 @@ export const Header = () => {
           {navLinks.map((link) => {
             const Icon = link.icon;
             const isActive = location.pathname === link.href;
-            
+
             return (
               <Link
                 key={link.href}
                 to={link.href}
-                className={`relative flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-colors ${
-                  isActive 
-                    ? "text-primary" 
+                className={`relative flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-colors ${isActive
+                    ? "text-primary"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
-                }`}
+                  }`}
               >
                 <Icon className="w-4 h-4" />
                 {link.label}
@@ -108,17 +107,16 @@ export const Header = () => {
             {navLinks.map((link) => {
               const Icon = link.icon;
               const isActive = location.pathname === link.href;
-              
+
               return (
                 <Link
                   key={link.href}
                   to={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
-                    isActive 
-                      ? "bg-primary/10 text-primary" 
+                  className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors ${isActive
+                      ? "bg-primary/10 text-primary"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                  }`}
+                    }`}
                 >
                   <Icon className="w-5 h-5" />
                   {link.label}
